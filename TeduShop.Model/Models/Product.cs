@@ -17,7 +17,9 @@ namespace TeduShop.Model.Models
         public string Alias { set; get; }
         public int CategoryID { set; get; }
         public string Image { set; get; }
-        public XElement ModeImage { set; get; }
+
+        [Column(TypeName = "xml")]
+        public string ModeImage { set; get; }
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }
         public int? Warranty { set; get; }
