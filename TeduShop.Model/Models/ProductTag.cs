@@ -20,8 +20,5 @@ namespace TeduShop.Model.Models
 
         [ForeignKey("TagID")]
         public virtual Tag Tag { set; get; }
-
-
-
     }
 }
