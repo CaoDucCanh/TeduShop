@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data
@@ -18,6 +13,7 @@ namespace TeduShop.Data
 
         //trong model có những bảng nào thì liệt kê hết
         public DbSet<Footer> Footers { set; get; }
+
         public DbSet<Menu> Menus { set; get; }
         public DbSet<MenuGroup> MenuGroups { set; get; }
         public DbSet<Order> Orders { set; get; }
@@ -34,12 +30,11 @@ namespace TeduShop.Data
         public DbSet<SystemConfig> SystemConfigs { set; get; }
         public DbSet<Tag> Tags { set; get; }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
-
+        public DbSet<Error> Errosrs { set; get; }
 
         //trong qúa trình làm ta phải ghi đè 1 phương thức của DBContext, nó sẽ chạy khi mà chúng ta khởi tạo entity framework
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-
         }
     }
 }
