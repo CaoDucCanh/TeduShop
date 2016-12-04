@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Repositories;
 using TeduShop.Model.Models;
@@ -7,7 +8,7 @@ namespace TeduShop.Service
 {
     public interface IPostCategoryService
     {
-        void Add(PostCategory postCategory);
+        PostCategory Add(PostCategory postCategory);
 
         void Update(PostCategory postCategory);
 
@@ -32,9 +33,9 @@ namespace TeduShop.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(PostCategory postCategory)
+        PostCategory IPostCategoryService.Add(PostCategory postCategory)
         {
-            _postCategoryRepository.Add(postCategory);
+            return _postCategoryRepository.Add(postCategory);
         }
 
         public void Update(PostCategory postCategory)
@@ -67,5 +68,6 @@ namespace TeduShop.Service
         {
             _unitOfWork.Commit();
         }
+
     }
 }
