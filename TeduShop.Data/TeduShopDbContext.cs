@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using TeduShop.Model.Models;
 
 namespace TeduShop.Data
 {
-    public class TeduShopDbContext : DbContext //kế thừa từ DbContext
+    public class TeduShopDbContext : IdentityDbContext<ApplicationUser> //kế thừa từ DbContext
     {
         public TeduShopDbContext()
             : base("TeduShopConnection")
@@ -32,9 +33,17 @@ namespace TeduShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errosrs { set; get; }
 
+        public static TeduShopDbContext Create()
+        {
+            return  new TeduShopDbContext();
+        }
+
         //trong qúa trình làm ta phải ghi đè 1 phương thức của DBContext, nó sẽ chạy khi mà chúng ta khởi tạo entity framework
         protected override void OnModelCreating(DbModelBuilder builder)
         {
+            builder.Entity<IdentityUserRole>().HasKey(i => new {i.UserId, i.RoleId});
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
+
         }
     }
 }

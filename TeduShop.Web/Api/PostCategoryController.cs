@@ -85,7 +85,7 @@ namespace TeduShop.Web.Api
             });
         }
 
-        // functio delete
+        // function delete
         [Route("delete")]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
