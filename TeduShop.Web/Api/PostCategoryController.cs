@@ -38,6 +38,7 @@ namespace TeduShop.Web.Api
         }
 
         //fucntion created
+        [HttpPost]
         [Route("add")]
         public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
         {
