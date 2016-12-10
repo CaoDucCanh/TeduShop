@@ -32,16 +32,18 @@ namespace TeduShop.Data
         public DbSet<Tag> Tags { set; get; }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<Error> Errosrs { set; get; }
+        public DbSet<ContactDetail> ContactDetails { set; get; }
+        public DbSet<Feedback> Feedbacks { set; get; }
 
         public static TeduShopDbContext Create()
         {
-            return  new TeduShopDbContext();
+            return new TeduShopDbContext();
         }
 
         //trong qúa trình làm ta phải ghi đè 1 phương thức của DBContext, nó sẽ chạy khi mà chúng ta khởi tạo entity framework
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<IdentityUserRole>().HasKey(i => new {i.UserId, i.RoleId});
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
             builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
 
         }

@@ -79,9 +79,19 @@
     <Compile Include="Migrations\201612041700218_Changekey.Designer.cs">
       <DependentUpon>201612041700218_Changekey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612100817519_AddTableFeedBackAndContact.cs" />
+    <Compile Include="Migrations\201612100817519_AddTableFeedBackAndContact.Designer.cs">
+      <DependentUpon>201612100817519_AddTableFeedBackAndContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612101419218_UpdateTableProduct.cs" />
+    <Compile Include="Migrations\201612101419218_UpdateTableProduct.Designer.cs">
+      <DependentUpon>201612101419218_UpdateTableProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ContactDetailRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
+    <Compile Include="Repositories\FeedBackRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\MenuGroupRepository.cs" />
     <Compile Include="Repositories\MenuRepository.cs" />
@@ -127,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612041700218_Changekey.resx">
       <DependentUpon>201612041700218_Changekey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612100817519_AddTableFeedBackAndContact.resx">
+      <DependentUpon>201612100817519_AddTableFeedBackAndContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612101419218_UpdateTableProduct.resx">
+      <DependentUpon>201612101419218_UpdateTableProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
